@@ -1,0 +1,9 @@
+.idea/
+
+*.iml
+
+*.class
+out/
+target/
+/polls
+*.sqlite3

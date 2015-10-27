@@ -36,6 +36,19 @@
                 </div>
             </div>
             <div class="panel-body">
+                <div class="radio">
+                    Sort By:
+                    <label class="radio-inline"><input type="radio" ng-model="sortBy" value="0" ng-click="sortJson()" ng-disabled="sortBy == 0">Id</label>
+                    <label class="radio-inline"><input type="radio" ng-model="sortBy" value="1" ng-click="sortJson()" ng-disabled="sortBy == 1">Name</label>
+                    <label class="radio-inline"><input type="radio" ng-model="sortBy" value="2" ng-click="sortJson()" ng-disabled="sortBy == 2">Degree</label>
+                    <label class="radio-inline"><input type="radio" ng-model="sortBy" value="3" ng-click="sortJson()" ng-disabled="sortBy == 3">Betweenness</label>
+                    <label class="radio-inline"><input type="radio" ng-model="sortBy" value="4" ng-click="sortJson()" ng-disabled="sortBy == 4">Closeness</label>
+                </div>
+                <div class="radio" ng-init="sortType='as'">
+                    Sort Type:
+                    <label class="radio-inline"><input type="radio" ng-model="sortType" value="as" ng-click="sortJson()" ng-disabled="sortType == 'as'">Ascending</label>
+                    <label class="radio-inline"><input type="radio" ng-model="sortType" value="ds" ng-click="sortJson()" ng-disabled="sortType == 'ds'">Descending</label>
+                </div>
                 <table class="table table-bordered">
                     <thead>
                     <tr>

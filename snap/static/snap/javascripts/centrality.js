@@ -34,6 +34,34 @@ app.controller('CentralityController', ['$scope', '$http', function ($scope, $ht
         }
         return array;
     };
+    $scope.sortJson = function () {
+        var ind = $scope.sortBy;
+        if(typeof ind === 'undefined'){
+            return;
+        }
+        var typ = $scope.sortType;
+        // a and b will be two instances of your object from your list
+
+        // possible return values
+        var a1st = typ == 'as'? -1 : 1; // negative value means left item should appear first
+        var b1st =  typ == 'as'? 1 : -1; // positive value means right item should appear first
+        var equal = 0; // zero means objects are equal
+
+        $scope.json.sort(function (a, b) {
+
+
+            // compare your object's property values and determine their order
+            if (b[ind] < a[ind]) {
+                return b1st;
+            }
+            else if (a[ind] < b[ind]) {
+                return a1st;
+            }
+            else {
+                return equal;
+            }
+        });
+    };
     $scope.csv = function () {
         document.getElementById('submitter').click()
     };
